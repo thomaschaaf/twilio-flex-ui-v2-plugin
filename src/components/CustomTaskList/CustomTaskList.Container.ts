@@ -21,4 +21,5 @@ const mapDispatchToProps = (dispatch: Dispatch<any>): DispatchToProps => ({
   dismissBar: bindActionCreators(Actions.dismissBar, dispatch),
 });
 
+// @ts-ignore
 export default connect(mapStateToProps, mapDispatchToProps)(CustomTaskList);

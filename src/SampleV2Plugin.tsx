@@ -23,7 +23,7 @@ export default class SampleV2Plugin extends FlexPlugin {
     this.registerReducers(manager);
 
     const options: Flex.ContentFragmentProps = { sortOrder: -1 };
-    flex.AgentDesktopView.Panel1.Content.add(<CustomTaskListContainer key="SampleV2Plugin-component" />, options);
+    flex.AgentDesktopView.Panel1.Content.add(<CustomTaskListContainer isOpen={false} key="SampleV2Plugin-component" />, options);
   }
 
   /**
@@ -32,12 +32,14 @@ export default class SampleV2Plugin extends FlexPlugin {
    * @param manager { Flex.Manager }
    */
   private registerReducers(manager: Flex.Manager) {
+    // @ts-ignore
     if (!manager.store.addReducer) {
       // eslint-disable-next-line
       console.error(`You need FlexUI > 1.9.0 to use built-in redux; you are currently on ${Flex.VERSION}`);
       return;
     }
 
+    // @ts-ignore
     manager.store.addReducer(namespace, reducers);
   }
 }

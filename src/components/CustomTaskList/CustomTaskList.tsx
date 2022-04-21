@@ -3,6 +3,8 @@ import React from 'react';
 import { CustomTaskListComponentStyles } from './CustomTaskList.Styles';
 import { StateToProps, DispatchToProps } from './CustomTaskList.Container';
 
+import { Button } from '@twilio-paste/core';
+
 interface OwnProps {
   // Props passed directly to the component
 }
@@ -22,6 +24,8 @@ const CustomTaskList: React.FunctionComponent<Props> = (props: Props) => {
       <i className="accented" onClick={props.dismissBar} aria-hidden="true">
         close
       </i>
+      {/* @ts-ignore */}
+      <Button>Hello</Button>
     </CustomTaskListComponentStyles>
   );
 };
