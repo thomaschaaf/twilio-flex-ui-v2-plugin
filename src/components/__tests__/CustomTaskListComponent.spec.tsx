@@ -10,6 +10,6 @@ describe('CustomTaskListComponent', () => {
       dismissBar: () => undefined,
     };
     const wrapper = shallow(<CustomTaskList {...props} />);
-    expect(wrapper.render().text()).toMatch('This is a dismissible demo component');
+    expect(wrapper.render().text()).toMatch('Test');
   });
 });
